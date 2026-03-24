@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FileFlux — Free Online File Converter</title>
+  <meta name="description" content="Free online file converter. Convert PDF to images, merge PDFs, compress images, and more. No uploads, 100% browser-based. Private & instant." />
+  <meta name="keywords" content="pdf to image, image to pdf, merge pdf, compress image, jpg to png, free file converter, online converter India" />
+  <meta name="author" content="FileFlux" />
+  <meta property="og:title" content="FileFlux — Free Online File Converter" />
+  <meta property="og:description" content="Convert files instantly in your browser. No uploads, no signup, 100% free." />
+  <meta property="og:type" content="website" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+
+  <!-- Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/browser-image-compression/2.0.2/browser-image-compression.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">⚡</span>
+      FileFlux
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link active">Tools</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="privacy.html" class="nav-link">Privacy</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero-badge">🔒 Files never leave your device</div>
+    <h1 class="hero-title">
+      Convert Files<br />
+      <span class="hero-accent">Instantly. Privately.</span>
+    </h1>
+    <p class="hero-sub">No signup. No upload to servers. Everything runs in your browser.<br />Fast, free, and private — always.</p>
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num">7</span><span class="stat-label">Tools</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><span class="stat-num">0</span><span class="stat-label">Uploads</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Free</span></div>
+    </div>
+  </section>
+
+  <!-- ===== AD BANNER TOP ===== -->
+  <div class="ad-container ad-top">
+    <!-- AdSense: Replace with your AdSense code -->
+    <div class="ad-placeholder">Advertisement</div>
+  </div>
+
+  <!-- ===== TOOLS GRID ===== -->
+  <section class="tools-section" id="tools">
+    <div class="section-label">All Tools</div>
+    <div class="tools-grid">
+
+      <div class="tool-card" data-tool="pdf-to-image">
+        <div class="tool-icon" style="background: linear-gradient(135deg, #f59e0b, #ef4444);">📄→🖼️</div>
+        <h3 class="tool-name">PDF to Images</h3>
+        <p class="tool-desc">Convert every PDF page to PNG or JPG images. Download all as a ZIP.</p>
+        <button class="tool-btn" onclick="openTool('pdf-to-image')">Use Tool →</button>
+      </div>
+
+      <div class="tool-card" data-tool="image-to-pdf">
+        <div class="tool-icon" style="background: linear-gradient(135deg, #3b82f6, #8b5cf6);">🖼️→📄</div>
+        <h3 class="tool-name">Images to PDF</h3>
+        <p class="tool-desc">Combine multiple images (JPG/PNG) into a single PDF document.</p>
+        <button class="tool-btn" onclick="openTool('image-to-pdf')">Use Tool →</button>
+      </div>
+
+      <div class="tool-card" data-tool="pdf-merge">
+        <div class="tool-icon" style="background: linear-gradient(135deg, #10b981, #3b82f6);">📎+📎</div>
+        <h3 class="tool-name">Merge PDFs</h3>
+        <p class="tool-desc">Combine multiple PDF files into one. Drag to reorder before merging.</p>
+        <button class="tool-btn" onclick="openTool('pdf-merge')">Use Tool →</button>
+      </div>
+
+      <div class="tool-card" data-tool="pdf-split">
+        <div class="tool-icon" style="background: linear-gradient(135deg, #f59e0b, #10b981);">✂️📄</div>
+        <h3 class="tool-name">Split PDF</h3>
+        <p class="tool-desc">Extract specific pages or split a PDF into individual pages.</p>
+        <button class="tool-btn" onclick="openTool('pdf-split')">Use Tool →</button>
+      </div>
+
+      <div class="tool-card" data-tool="image-compress">
+        <div class="tool-icon" style="background: linear-gradient(135deg, #ec4899, #f59e0b);">🗜️🖼️</div>
+        <h3 class="tool-name">Compress Image</h3>
+        <p class="tool-desc">Reduce image file size while keeping good quality. Perfect for sharing.</p>
+        <button class="tool-btn" onclick="openTool('image-compress')">Use Tool →</button>
+      </div>
+
+      <div class="tool-card" data-tool="image-convert">
+        <div class="tool-icon" style="background: linear-gradient(135deg, #8b5cf6, #ec4899);">🔄🖼️</div>
+        <h3 class="tool-name">Convert Image Format</h3>
+        <p class="tool-desc">Convert between JPG, PNG, WebP formats instantly.</p>
+        <button class="tool-btn" onclick="openTool('image-convert')">Use Tool →</button>
+      </div>
+
+      <div class="tool-card" data-tool="pdf-compress">
+        <div class="tool-icon" style="background: linear-gradient(135deg, #14b8a6, #3b82f6);">🗜️📄</div>
+        <h3 class="tool-name">Compress PDF</h3>
+        <p class="tool-desc">Reduce PDF file size by compressing embedded images inside it.</p>
+        <button class="tool-btn" onclick="openTool('pdf-compress')">Use Tool →</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== AD BANNER MID ===== -->
+  <div class="ad-container">
+    <div class="ad-placeholder">Advertisement</div>
+  </div>
+
+  <!-- ===== TOOL PANEL (modal-like workspace) ===== -->
+  <div class="tool-panel" id="toolPanel" style="display:none;">
+    <div class="panel-header">
+      <button class="back-btn" onclick="closeTool()">← Back to Tools</button>
+      <h2 class="panel-title" id="panelTitle">Tool</h2>
+    </div>
+    <div class="panel-body" id="panelBody">
+      <!-- Injected by JS -->
+    </div>
+  </div>
+
+  <!-- ===== FEATURES ===== -->
+  <section class="features-section" id="featuresSection">
+    <div class="section-label">Why FileFlux?</div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🔒</div>
+        <h4>100% Private</h4>
+        <p>Your files are processed right inside your browser. Nothing is ever uploaded to any server. Not even a byte.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <h4>Lightning Fast</h4>
+        <p>No waiting for uploads or downloads from a server. Processing happens locally at full device speed.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">💸</div>
+        <h4>Completely Free</h4>
+        <p>No subscription, no credit card, no signup. Just open the site and start converting. Always free.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📱</div>
+        <h4>Works Everywhere</h4>
+        <p>Fully mobile-responsive. Works on Android, iPhone, laptop, desktop — any modern browser.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== AD BANNER BOTTOM ===== -->
+  <div class="ad-container">
+    <div class="ad-placeholder">Advertisement</div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-logo">⚡ FileFlux</div>
+    <div class="footer-tagline">Free. Private. Instant.</div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <p class="footer-copy">© 2024 FileFlux. All file processing happens in your browser. We never store your files.</p>
+  </footer>
+
+  <!-- ===== TOAST NOTIFICATION ===== -->
+  <div class="toast" id="toast"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

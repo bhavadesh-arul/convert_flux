@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — FileFlux</title>
+  <meta name="description" content="About FileFlux — a free, private, browser-based file converter tool built for students and professionals." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="logo"><span class="logo-icon">⚡</span>FileFlux</a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Tools</a>
+      <a href="about.html" class="nav-link active">About</a>
+      <a href="privacy.html" class="nav-link">Privacy</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </nav>
+
+  <section class="page-hero">
+    <h1>About <span class="hero-accent">FileFlux</span></h1>
+    <p>Built for students, professionals, and everyone who just needs to convert a file — fast, free, and without uploading anything to the cloud.</p>
+  </section>
+
+  <div class="page-content">
+    <h2>What is FileFlux?</h2>
+    <p>FileFlux is a free online file conversion tool that runs entirely inside your web browser. There are no servers, no signups, and no subscriptions. Every conversion — whether you're turning a PDF into images, merging documents, or compressing a photo — happens locally on your device using modern browser APIs.</p>
+
+    <h2>Why We Built This</h2>
+    <p>Most file converter websites make you upload your sensitive documents to a remote server. This raises real privacy concerns — especially for students sharing academic work, office workers handling business documents, or anyone dealing with personal files. FileFlux solves this by doing all processing client-side, so your files never leave your device.</p>
+
+    <h2>Who Is This For?</h2>
+    <p>FileFlux was designed for:</p>
+    <ul>
+      <li>College students who need to convert assignment files quickly</li>
+      <li>Office professionals working with PDFs and images daily</li>
+      <li>Small business owners who need simple, free document tools</li>
+      <li>Anyone who values privacy and doesn't want to sign up for yet another service</li>
+    </ul>
+
+    <h2>The Technology</h2>
+    <p>FileFlux uses powerful open-source JavaScript libraries including PDF.js (by Mozilla), pdf-lib, jsPDF, JSZip, and browser-image-compression — all running directly in your browser at full speed, with no server involved.</p>
+
+    <h2>Is It Really Free?</h2>
+    <p>Yes — completely free, with no hidden limits. FileFlux is supported by non-intrusive advertising (Google AdSense). You never need to pay, subscribe, or create an account to use any tool on this site.</p>
+
+    <h2>Contact Us</h2>
+    <p>Have a suggestion or found a bug? We'd love to hear from you. Visit our <a href="contact.html" style="color: var(--accent3);">Contact page</a>.</p>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-logo">⚡ FileFlux</div>
+    <div class="footer-tagline">Free. Private. Instant.</div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <p class="footer-copy">© 2024 FileFlux. All file processing happens in your browser. We never store your files.</p>
+  </footer>
+
+  <script>
+    const ham = document.getElementById('hamburger');
+    const links = document.querySelector('.nav-links');
+    if (ham) ham.addEventListener('click', () => links.classList.toggle('open'));
+  </script>
+</body>
+</html>

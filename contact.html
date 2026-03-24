@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — FileFlux</title>
+  <meta name="description" content="Contact FileFlux — send us feedback, bug reports, or suggestions." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="logo"><span class="logo-icon">⚡</span>FileFlux</a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Tools</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="privacy.html" class="nav-link">Privacy</a>
+      <a href="contact.html" class="nav-link active">Contact</a>
+    </div>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </nav>
+
+  <section class="page-hero">
+    <h1>Get in <span class="hero-accent">Touch</span></h1>
+    <p>Found a bug? Have a suggestion? Want to request a new tool? We'd love to hear from you.</p>
+  </section>
+
+  <div class="page-content">
+    <h2>Send us a Message</h2>
+    <p>Fill out the form below and we'll get back to you as soon as possible. Alternatively, you can email us directly at <span style="color:var(--accent3);">hello@fileflux.com</span> (update with your actual email).</p>
+
+    <!-- 
+      TIP: To make this form work, sign up for a free Formspree account at formspree.io
+      and replace YOUR_FORM_ID below with your actual form ID.
+      Or use Web3Forms (web3forms.com) — also free and easy.
+    -->
+    <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <div class="form-group">
+        <label class="form-label" for="name">Your Name</label>
+        <input class="form-input" type="text" id="name" name="name" placeholder="e.g. Rahul Sharma" required />
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="email">Email Address</label>
+        <input class="form-input" type="email" id="email" name="email" placeholder="you@example.com" required />
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="subject">Subject</label>
+        <input class="form-input" type="text" id="subject" name="subject" placeholder="Bug report / Suggestion / Other" required />
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="message">Message</label>
+        <textarea class="form-textarea" id="message" name="message" placeholder="Tell us more…" required></textarea>
+      </div>
+      <button class="form-submit" type="submit">Send Message →</button>
+    </form>
+
+    <h2 style="margin-top:3rem;">Frequently Asked Questions</h2>
+
+    <h2>Are my files really private?</h2>
+    <p>Yes, 100%. All processing happens inside your browser using JavaScript. We have absolutely no server-side component, so your files never travel over the internet to us. Not even a single byte.</p>
+
+    <h2>Why is my browser slow during conversion?</h2>
+    <p>Large PDF files or high-resolution images can use significant CPU/RAM during conversion because everything runs locally. Try using a desktop browser for large files, or lower the quality/scale settings.</p>
+
+    <h2>Can I use this on mobile?</h2>
+    <p>Yes! FileFlux works on Android and iOS browsers. For very large files, a desktop browser is recommended for best performance.</p>
+
+    <h2>Will you add more tools?</h2>
+    <p>We're always looking to add more useful tools. Send us your suggestions through the form above!</p>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-logo">⚡ FileFlux</div>
+    <div class="footer-tagline">Free. Private. Instant.</div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <p class="footer-copy">© 2024 FileFlux. All file processing happens in your browser. We never store your files.</p>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+
+  <script>
+    const ham = document.getElementById('hamburger');
+    const links = document.querySelector('.nav-links');
+    if (ham) ham.addEventListener('click', () => links.classList.toggle('open'));
+  </script>
+</body>
+</html>
